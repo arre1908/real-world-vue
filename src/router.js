@@ -22,7 +22,7 @@ export default new Router({
       props: true
     },
     {
-      path: "/event/create",
+      path: "/event/TEMPNAME/create",
       name: "event-create",
       component: EventCreate,
       alias: "/create"
