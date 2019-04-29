@@ -18,30 +18,16 @@ Follows Vue Mastery's course _[Real World Vue.js](https://www.vuemastery.com/cou
 npm install
 ```
 
-### Compiles and hot-reloads for development
+#### _NOTE: Website requires mock server with events data._
+
+In a terminal shell, run mock server:
+
+```
+npm run server
+```
+
+In a different shell instance, run website:
 
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
