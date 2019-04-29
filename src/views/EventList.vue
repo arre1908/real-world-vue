@@ -1,25 +1,33 @@
 <template>
   <div>
     <h1>Event Listing</h1>
-    <EventCard />
-    <MediaBox>
-      <h3 slot="heading">Named slot 1</h3>
-      <template slot="paragraph">
-        <h4>Named slot 2</h4>
-        <p>Also named slot 2</p>
-      </template>
-    </MediaBox>
+    <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
 </template>
 
 <script>
 import EventCard from "@/components/EventCard.vue";
-import MediaBox from "@/components/MediaBox.vue";
+import EventService from "@/services/EventService.js";
 
 export default {
   components: {
-    EventCard,
-    MediaBox
+    EventCard
+  },
+  data() {
+    return {
+      events: []
+    };
+  },
+  // Lifecycle hooks (reference):
+  // https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks
+  created() {
+    EventService.getEvents()
+      .then(response => {
+        this.events = response.data;
+      })
+      .catch(error => {
+        console.log("There was an error:", error.response);
+      });
   }
 };
 </script>

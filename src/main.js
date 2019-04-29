@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-// Automatic global components sourced from here:
+// Automatic global components (reference):
 // https://vuejs.org/v2/guide/components-registration.html#Automatic-Global-Registration-of-Base-Components
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
